@@ -18,6 +18,7 @@ prog=$((prog+1))
 
 echo "$prog.1/? add pip install location to path"
 echo "export PATH=\"$HOME/.local/bin:\$PATH\"">>~/.config/zsh/.zshrc
+export PATH="$HOME/.local/bin:\$PATH" #also for current session
 echo "$prog.2/? installing zsh plugins "
 qsetup_orig=$(pwd) #go back to where it was :>
 cd ~/.config
