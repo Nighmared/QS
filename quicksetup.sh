@@ -2,12 +2,15 @@ echo "might ask for sudo if not run as root because of apt\n also if not run as 
 
 prog=1
 
+
+apt install git sudo
+
 echo "$prog/?: cloning config files"
-git clone -b lightweight https://github.com/Nighmared/dotfiles ~/.config #get some configs
+/bin/git clone -b lightweight https://github.com/Nighmared/dotfiles ~/.config #get some configs
 
 prog=$((prog+1))
 echo "$prog/?: installing stuff"
-sudo apt install sudo htop neofetch wget git zsh python3 python3-pip python3-venv command-not-found -y
+/bin/sudo apt install sudo htop neofetch wget git zsh python3 python3-pip python3-venv command-not-found -y
 prog=$((prog+1))
 echo "$prog/?: setting zsh as shell"
 chsh -s /bin/zsh
@@ -22,16 +25,16 @@ export PATH="$HOME/.local/bin:\$PATH" #also for current session
 echo "$prog/? installing zsh plugins "
 qsetup_orig=$(pwd) #go back to where it was :>
 cd ~/.config
-git submodule update --init --recursive #for plugins :facepalm:
+/bin/git submodule update --init --recursive #for plugins :facepalm:
 cd $qsetup_orig
 unset qsetup_orig
 
-pip3 install pygments
+/bin/pip3 install pygments
 prog=$((prog+1))
 
 echo "$prog/?: symlink zshrc file -.-"
-rm ~/.zshrc
-ln -s ~/.config/zsh/.zshrc ~/.zshrc
+/bin/rm ~/.zshrc
+/binln -s ~/.config/zsh/.zshrc ~/.zshrc
 prog=$((prog+1))
 
 echo "---------------done--------------"
