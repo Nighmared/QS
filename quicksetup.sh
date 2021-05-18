@@ -34,7 +34,7 @@ prog=$((prog+1))
 
 echo "$prog/?: symlink zshrc file -.-"
 /bin/rm ~/.zshrc
-/binln -s ~/.config/zsh/.zshrc ~/.zshrc
+/bin/ln -s ~/.config/zsh/.zshrc ~/.zshrc
 prog=$((prog+1))
 
 echo "---------------done--------------"
