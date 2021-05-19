@@ -3,7 +3,7 @@ echo "might ask for sudo if not run as root because of apt\n also if not run as 
 prog=1
 
 
-apt install git sudo
+sudo apt install git || apt install git
 
 echo "$prog/?: cloning config files"
 /bin/git clone -b lightweight https://github.com/Nighmared/dotfiles ~/.config #get some configs
